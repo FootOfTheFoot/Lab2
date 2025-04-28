@@ -7,8 +7,8 @@ def main():
     print("ET0735 (DevOps for AIoT) - Lab 2 - Introduction to Python")
     bmi=calculate_bmi(weight=57, height=1.73)
     bmi_range(bmi)
-    display_main_menu()
-    templist=get_user_input()
+    value=display_main_menu()
+    templist=get_user_input(value)
     print(templist)
     avg=calc_average(templist)
     print(f"Average temperature: {avg}")
@@ -37,17 +37,14 @@ def bmi_range(bmi):
         print("Under Weight")
 
 def display_main_menu():
-    print("display_main_menu")
+    value=input(f"Enter some numbers separated by commas (e.g. 5, 67, 32)")
+    return value
 
-def get_user_input():
-    value=0
+def get_user_input(value):
     temp=[]
-    while True:
-        value=float(input("Press -1 to terminate\nEnter temp:")) 
-        if value==-1:
-            break 
-        temp.append(value)
-    return temp
+    temp=value.split(",")
+    temp_list=[float(item) for item in temp]
+    return temp_list
 
 def calc_average(templist):
     sum=0
