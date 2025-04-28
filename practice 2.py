@@ -10,13 +10,14 @@ def main():
     display_main_menu()
     templist=get_user_input()
     print(templist)
-    calc_average(templist)
+    avg=calc_average(templist)
+    print(f"Average temperature: {avg}")
     min_max=find_min_max(templist)
     print("Minimum temperature:",min_max[0],"\nMaximum temperature:",min_max[1])
     temp=sort_temperature(templist)
     print(f"Sorted temperature list: {temp}")
     median=calc_median_temperature(temp)
-    print("The median temperature is",median)
+    print(f"Median temperature: {median:.2f}")
 
 
 
